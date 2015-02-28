@@ -1,0 +1,27 @@
+{
+  "name": "node-demo",
+  "version": "1.0.0",
+  "description": "to show express & swaggerui",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nabraham/node-demo.git"
+  },
+  "keywords": [
+    "node",
+    "demo"
+  ],
+  "author": "Nathan Abraham <nabraham@gmail.com> (https://github.com/nabraham/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nabraham/node-demo/issues"
+  },
+  "homepage": "https://github.com/nabraham/node-demo",
+  "dependencies": {
+    "express": "^4.12.0",
+    "swagger-ui": "^2.1.8-M1"
+  }
+}
