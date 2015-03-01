@@ -8,6 +8,7 @@ var bodyParser = require('body-parser')
 var app = express();
 app.use(expressJson());
 app.use(bodyParser.urlencoded());
+app.use('/swagger', express.static(__dirname + '/public/swagger'));
 
 var swagger = swagger_node.createNew(app);
 initRoutes(swagger);
@@ -58,7 +59,7 @@ function initRoutes(swagger) {
 
 function startServer(app, swagger) {
     swagger.configureSwaggerPaths("", "/docs", "");
-    swagger.configure('http://localhost:3000/docs','0.1');
+    swagger.configure('http://localhost:3000/','0.1');
     var server = app.listen(3000, function () {
         var host = server.address().address
         var port = server.address().port
