@@ -16,21 +16,21 @@ function mockResponse(validator, done) {
                 done();
             }
         }
-    }
+    };
 }
 
 describe('failure conditions', function() {
     it('should fail on non-positive integers', function() {
         var f = function() {
             math.fib_slow(mockRequest(0), mockResponse());
-        }
+        };
         assert.throws(f, /fibbonacci defined/);
     });
 
     it('should fail on non-natural integers', function() {
         var f = function() {
             math.fib_slow(mockRequest('foo'), mockResponse());
-        }
+        };
         assert.throws(f, /numeric argument/);
     });
 });
