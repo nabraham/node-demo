@@ -33,11 +33,31 @@ describe('failure conditions', function() {
         };
         assert.throws(f, /numeric argument/);
     });
+
+    it('should fail on non-positive integers', function() {
+        var f = function() {
+            math.fib_fast(mockRequest(0), mockResponse());
+        };
+        assert.throws(f, /fibbonacci defined/);
+    });
+
+    it('should fail on non-natural integers', function() {
+        var f = function() {
+            math.fib_fast(mockRequest('foo'), mockResponse());
+        };
+        assert.throws(f, /numeric argument/);
+    });
 });
 
-describe('regular use case', function() {
-    it('should return 144 for n=12', function(done) {
+describe('regular use cases', function() {
+    it('should return 144 for n=12 (slow)', function(done) {
         math.fib_slow(mockRequest(12), mockResponse(function(r) {
+            assert.equal(r.result, 144);
+        }, done));
+    });
+
+    it('should return 144 for n=12 (fast)', function(done) {
+        math.fib_fast(mockRequest(12), mockResponse(function(r) {
             assert.equal(r.result, 144);
         }, done));
     });
