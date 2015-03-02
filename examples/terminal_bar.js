@@ -1,0 +1,1 @@
+../node_modules/terminal-bar/examples/example.js
