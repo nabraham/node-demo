@@ -2,7 +2,7 @@
   "name": "node-demo",
   "version": "1.0.0",
   "description": "to show express & swaggerui",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "jscoverage lib lib-cov && mocha test/**/*.js"
   },
